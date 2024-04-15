@@ -5,7 +5,7 @@ import BrandsTable from "../../components/BrandsContents/BrandsTable";
 
 
 export const HomePage = () => {
-    const [isOpen, setOpen] =  useState(false);
+    const [isOpen, setOpen] = useState(false);
 
     const toggle = () => {
         setOpen(!isOpen);
@@ -23,7 +23,7 @@ export const HomePage = () => {
                 >
                     Create New Brand
                 </Button>
-                <BrandsTable />
+                <BrandsTable {...modalProps} />
             </Card>
             <AddNewBrandModal {...modalProps} />
         </Layout>

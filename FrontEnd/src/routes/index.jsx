@@ -8,6 +8,7 @@ import ManageProductsTable from "../screens/ManageProducts/ManageProductsTable/i
 const Routes = () => {
     let element = [
         { path: "/", element: <HomePage /> },
+        { path: "/brands", element: <HomePage /> },
         { path: "/create-category/:id", element: <CreateNewCategoryTable /> },
         { path: "/create-products/:id", element: <ManageProductsTable /> },
     ];

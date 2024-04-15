@@ -1,12 +1,14 @@
-body {
-    margin: 0;
-}
-
-.ant-btn{
-    box-shadow: none;
-}
-
-.ant-layout{
+.ant-layout {
     padding: 30px;
-    height: 100vh;
+    height: calc(100vh - 57px);
+
+    .export_csv {
+        border-color: #229f73;
+        color: #229f73;
+        font-weight: 500;
+    }
+
+    .ant-table-wrapper {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
 }
