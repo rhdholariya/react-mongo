@@ -2,6 +2,7 @@ import BrowserRouter from "./components/BrowserRouter";
 import Routes from "./routes"
 import { ConfigProvider } from 'antd';
 import history from "./utils/history";
+import Header from "./components/Header"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       }}
     >
       <BrowserRouter history={history}>
+        <Header />
         <Routes />
       </BrowserRouter>
     </ConfigProvider>

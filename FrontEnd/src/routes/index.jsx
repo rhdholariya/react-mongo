@@ -7,6 +7,7 @@ import CreateNewCategoryTable from "../screens/CreateCategory/CreateNewCategoryT
 const Routes = () => {
     let element = [
         { path: "/", element: <HomePage /> },
+        { path: "/brands", element: <HomePage /> },
         { path: "/create-category/:id", element: <CreateNewCategoryTable /> },
     ];
     return useRoutes(element);
