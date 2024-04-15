@@ -1,5 +1,5 @@
-import { Input, Table } from "antd";
-
+import { Button, Flex, Input, Space, Table } from "antd";
+import { SearchOutlined } from '@ant-design/icons';
 
 const columns = [
     {
@@ -41,6 +41,23 @@ const dataSource = [
 const BrandsTable = () => {
     return (
         <>
+            <Flex
+                gap="middle" 
+                align="center"
+                justify="space-between"
+                style={{ marginBottom: 15 }}
+            >
+                <Input
+                    size="large"
+                    placeholder="Search in ld, Brand name"
+                    prefix={<SearchOutlined />}
+                    style={{width:500}}
+                />
+                <Flex gap="small">
+                    <Button>Cancel</Button>
+                    <Button type="primary" htmlType="submit">Save</Button>
+                </Flex>
+            </Flex>
             <Table
                 dataSource={dataSource}
                 columns={columns}
