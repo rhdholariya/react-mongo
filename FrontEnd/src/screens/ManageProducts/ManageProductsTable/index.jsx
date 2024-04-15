@@ -1,7 +1,7 @@
 import {Button, Card, Flex, Input, Layout, Table} from "antd";
 import { useState } from "react";
 import {SearchOutlined} from '@ant-design/icons';
-import history from "../../../utils/history.js";
+import ManageProductsModal from "../ManageProductsModal.jsx";
 
 const ManageProductsTable = () => {
     const [searchText, setSearchText] = useState('');
@@ -25,13 +25,6 @@ const ManageProductsTable = () => {
             title: 'NAME',
             dataIndex: 'name',
             key: 'name',
-            // render: (name, row) => {
-            //     return (
-            //         <a onClick={() => history.push(`/create-products/${row.key}`)}>
-            //             {name}
-            //         </a>
-            //     );
-            // },
         },
         {
             title: 'HSN NAME',
@@ -100,30 +93,30 @@ const ManageProductsTable = () => {
                         <Button
                             type="primary"
                             size="large"
-                            onClick={toggle}
                         >
                             Create a new Product Group
                         </Button>
                         <Button
                             type="primary"
                             size="large"
-                            onClick={toggle}
                         >
                             Create a new Composite SKU
                         </Button>
                     </Flex>
                     <Input
-                        placeholder="Search in ID, Name, HSN NAME, HSN CODE"
+                        placeholder="Search in Name"
                         prefix={<SearchOutlined/>}
                         onChange={e => handleSearch(e.target.value)}
                         style={{width: 400, height: 40, marginBottom: 10}}
                     />
                 </Flex>
                 <Table
+                    className="standard_table"
                     dataSource={filteredDataSource}
                     columns={columns}
                 />
             </Card>
+            <ManageProductsModal {...modalProps}/>
         </Layout>
     );
 };

@@ -3,3 +3,21 @@ body { margin: 0;font-family: "Poppins", sans-serif; }
 .ant-btn{
     box-shadow: none;
 }
+
+.standard_table{
+    .ant-spin-container{
+        .ant-table-container{
+            .ant-table-tbody{
+                font-size: 16px;
+            }
+        }
+    }
+}
+.link_underline{
+    border-bottom: 1px solid #9b7455;
+    color: #9b7455;
+}
+
+.link_underline:hover{
+    color: #9b7455;
+}

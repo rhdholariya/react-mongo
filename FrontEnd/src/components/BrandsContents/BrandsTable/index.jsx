@@ -1,7 +1,7 @@
-import { Button, Flex, Input, Table } from "antd";
-import { SearchOutlined } from '@ant-design/icons';
-import { FileExcelOutlined } from '@ant-design/icons';
-import history from "../../../utils/history.js";
+import {Button, Flex, Input, Table} from "antd";
+import {SearchOutlined} from '@ant-design/icons';
+import {FileExcelOutlined} from '@ant-design/icons';
+import {Link} from "react-router-dom";
 
 const BrandsTable = (props) => {
     const {toggle} = props;
@@ -11,18 +11,21 @@ const BrandsTable = (props) => {
             title: 'ID',
             dataIndex: 'key',
             key: 'key',
-            render: (name,row) => {
-                return (
-                    <a onClick={()=>history.push(`/create-category/${row.key}`)}>
-                        {name}
-                    </a>
-                );
-            },
         },
         {
             title: 'BRAND NAME',
             dataIndex: 'name',
             key: 'name',
+            render: (name, row) => {
+                return (
+                    <Link
+                        className="link_underline"
+                        to={`/create-category/${row.key}`}
+                    >
+                        {name}
+                    </Link>
+                );
+            },
         },
         {
             title: 'LOGO',
@@ -39,7 +42,7 @@ const BrandsTable = (props) => {
             dataIndex: 'actions',
             key: 'actions',
             width: 400,
-            render: (_, record) => {
+            render: () => {
                 return (
                     <Flex gap="20px">
                         <Button type="primary" onClick={toggle}>Edit</Button>
@@ -78,25 +81,26 @@ const BrandsTable = (props) => {
     return (
         <>
             <Flex
-                gap="middle" 
+                gap="middle"
                 align="center"
                 justify="space-between"
-                style={{ marginBottom: 15 }}
+                style={{marginBottom: 15}}
             >
                 <Input
                     size="large"
                     placeholder="Search in ld, Brand name"
-                    prefix={<SearchOutlined />}
-                    style={{width:500}}
+                    prefix={<SearchOutlined/>}
+                    style={{width: 500}}
                 />
                 <Flex gap="small">
                     <Button className="export_csv">
-                        EXPORT <FileExcelOutlined />
+                        EXPORT <FileExcelOutlined/>
                     </Button>
                     <Button primary="true">SHOW / HIDE COLUMNS</Button>
                 </Flex>
             </Flex>
             <Table
+                className="standard_table"
                 dataSource={dataSource}
                 columns={columns}
             />

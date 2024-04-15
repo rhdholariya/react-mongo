@@ -28,7 +28,7 @@ const CreateNewCategoryTable = () => {
             key: 'name',
             render: (name, row) => {
                 return (
-                    <a onClick={() => history.push(`/create-products/${row.id}`)}>
+                    <a className="link_underline" onClick={() => history.push(`/create-products/${row.id}`)}>
                         {name}
                     </a>
                 );
@@ -106,6 +106,7 @@ const CreateNewCategoryTable = () => {
                     />
                 </Flex>
                 <Table
+                    className="standard_table"
                     dataSource={filteredDataSource}
                     columns={columns}
                 />
