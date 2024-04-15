@@ -5,6 +5,7 @@ import "../scss/app.scss";
 const HomePage = React.lazy(() => import("../screens/Home"));
 const ManageProductsTable = React.lazy(() => import("../screens/ManageProducts/ManageProductsTable/index.jsx"));
 const CreateNewCategoryTable = React.lazy(() => import("../screens/CreateCategory/CreateNewCategoryTable.jsx"));
+const ManageProductGroup = React.lazy(() => import("../screens/ManageProducts/CreateProductGroup/ManageProductGroup.jsx"));
 
 const Routes = () => {
     let element = [
@@ -12,6 +13,7 @@ const Routes = () => {
         { path: "/brands", element: <HomePage /> },
         { path: "/create-category/:id", element: <CreateNewCategoryTable /> },
         { path: "/create-products/:id", element: <ManageProductsTable /> },
+        { path: "/product-group", element: <ManageProductGroup /> },
     ];
     return useRoutes(element);
 };

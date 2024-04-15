@@ -2,6 +2,7 @@ import {Button, Card, Flex, Input, Layout, Table} from "antd";
 import { useState } from "react";
 import {SearchOutlined} from '@ant-design/icons';
 import ManageProductsModal from "../ManageProductsModal.jsx";
+import history from "../../../utils/history.js";
 
 const ManageProductsTable = () => {
     const [searchText, setSearchText] = useState('');
@@ -93,6 +94,7 @@ const ManageProductsTable = () => {
                         <Button
                             type="primary"
                             size="large"
+                            onClick={()=>history.push('/product-group')}
                         >
                             Create a new Product Group
                         </Button>
