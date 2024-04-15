@@ -1,10 +1,9 @@
 import {Button, Card, Flex, Input, Layout, Table} from "antd";
 import { useState } from "react";
 import {SearchOutlined} from '@ant-design/icons';
-import history from "../../utils/history.js";
-import CreateNewCategoryModal from "../../components/CategoryContents/CreateNewCategoryModal/CreateNewCategoryModal.jsx";
+import history from "../../../utils/history.js";
 
-const CreateNewCategoryTable = () => {
+const ManageProductsTable = () => {
     const [searchText, setSearchText] = useState('');
     const [isOpen, setOpen] = useState(false);
     const toggle = () => {
@@ -26,13 +25,13 @@ const CreateNewCategoryTable = () => {
             title: 'NAME',
             dataIndex: 'name',
             key: 'name',
-            render: (name, row) => {
-                return (
-                    <a onClick={() => history.push(`/create-products/${row.id}`)}>
-                        {name}
-                    </a>
-                );
-            },
+            // render: (name, row) => {
+            //     return (
+            //         <a onClick={() => history.push(`/create-products/${row.key}`)}>
+            //             {name}
+            //         </a>
+            //     );
+            // },
         },
         {
             title: 'HSN NAME',
@@ -76,7 +75,7 @@ const CreateNewCategoryTable = () => {
         {
             id: 1,
             key: '1',
-            name: 'Mike',
+            name: 'Mike Product',
             hsn_name: 'Mike',
             hsn_code: '2342352342398',
             created_at: '09/04/2024',
@@ -90,14 +89,29 @@ const CreateNewCategoryTable = () => {
         <Layout>
             <Card>
                 <Flex vertical>
-                    <Button
-                        type="primary"
-                        size="large"
-                        style={{width: 200, marginBottom: 15}}
-                        onClick={toggle}
-                    >
-                        Create New Category
-                    </Button>
+                    <Flex gap="10px" style={{marginBottom:"15px"}}>
+                        <Button
+                            type="primary"
+                            size="large"
+                            onClick={toggle}
+                        >
+                            Create New Products
+                        </Button>
+                        <Button
+                            type="primary"
+                            size="large"
+                            onClick={toggle}
+                        >
+                            Create a new Product Group
+                        </Button>
+                        <Button
+                            type="primary"
+                            size="large"
+                            onClick={toggle}
+                        >
+                            Create a new Composite SKU
+                        </Button>
+                    </Flex>
                     <Input
                         placeholder="Search in ID, Name, HSN NAME, HSN CODE"
                         prefix={<SearchOutlined/>}
@@ -110,9 +124,8 @@ const CreateNewCategoryTable = () => {
                     columns={columns}
                 />
             </Card>
-            <CreateNewCategoryModal {...modalProps} />
         </Layout>
     );
 };
 
-export default CreateNewCategoryTable;
+export default ManageProductsTable;

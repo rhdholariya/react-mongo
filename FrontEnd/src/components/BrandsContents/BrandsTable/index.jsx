@@ -1,11 +1,19 @@
 import { Button, Flex, Input, Space, Table } from "antd";
 import { SearchOutlined } from '@ant-design/icons';
+import history from "../../../utils/history.js";
 
 const columns = [
     {
         title: 'ID',
         dataIndex: 'name',
         key: 'id',
+        render: (name,row) => {
+            return (
+                <a onClick={()=>history.push(`/create-category/${row.id}`)}>
+                    {name}
+                </a>
+            );
+        },
     },
     {
         title: 'BRAND NAME',
@@ -32,6 +40,7 @@ const columns = [
 const dataSource = [
     {
         key: '1',
+        id: 1,
         name: 'Mike',
         age: 32,
         address: '10 Downing Street',
