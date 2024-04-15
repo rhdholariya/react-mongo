@@ -1,9 +1,10 @@
 import React from 'react';
 import { useRoutes } from "react-router-dom";
-import { HomePage } from '../screens/Home';
-import "../scss/app.scss"
-import CreateNewCategoryTable from "../screens/CreateCategory/CreateNewCategoryTable.jsx";
-import ManageProductsTable from "../screens/ManageProducts/ManageProductsTable/index.jsx";
+import "../scss/app.scss";
+
+const HomePage = React.lazy(() => import("../screens/Home"));
+const ManageProductsTable = React.lazy(() => import("../screens/ManageProducts/ManageProductsTable/index.jsx"));
+const CreateNewCategoryTable = React.lazy(() => import("../screens/CreateCategory/CreateNewCategoryTable.jsx"));
 
 const Routes = () => {
     let element = [

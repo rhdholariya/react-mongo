@@ -1,8 +1,9 @@
 import BrowserRouter from "./components/BrowserRouter";
-import Routes from "./routes"
+import Routes from "./routes";
 import { ConfigProvider } from 'antd';
 import history from "./utils/history";
-import Header from "./components/Header"
+import Header from "./components/Header";
+import 'sweetalert2/src/sweetalert2.scss';
 
 function App() {
   return (

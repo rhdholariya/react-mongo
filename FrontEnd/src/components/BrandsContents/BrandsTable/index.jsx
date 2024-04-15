@@ -1,10 +1,17 @@
+import { useState } from "react";
 import { Button, Flex, Input, Table } from "antd";
 import { SearchOutlined } from '@ant-design/icons';
 import { FileExcelOutlined } from '@ant-design/icons';
 import history from "../../../utils/history.js";
+import AddNewAddressModal from "../AddNewAddressModal";
 
 const BrandsTable = (props) => {
     const {toggle} = props;
+    const [isOpenAddressModal,setAddressModal] = useState(false)
+
+    const toggleAddressModal = () => {
+        setAddressModal(!isOpenAddressModal);
+    }
 
     const columns = [
         {
@@ -28,6 +35,11 @@ const BrandsTable = (props) => {
             title: 'LOGO',
             dataIndex: 'logo',
             key: 'logo',
+            render: (_, record) => {
+                return (
+                    <img src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" height="94px"/>
+                )
+            }
         },
         {
             title: 'CREATED AT',
@@ -42,9 +54,9 @@ const BrandsTable = (props) => {
             render: (_, record) => {
                 return (
                     <Flex gap="20px">
-                        <Button type="primary" onClick={toggle}>Edit</Button>
-                        <Button type="primary" danger>Delete</Button>
-                        <Button type="primary">+ Address</Button>
+                        <Button type="primary" size="large" onClick={toggle}>Edit</Button>
+                        <Button type="primary" size="large" danger>Delete</Button>
+                        <Button type="primary" size="large" onClick={toggleAddressModal}>+ Address</Button>
                     </Flex>
                 )
             }
@@ -99,6 +111,10 @@ const BrandsTable = (props) => {
             <Table
                 dataSource={dataSource}
                 columns={columns}
+            />
+            <AddNewAddressModal
+                isOpen={isOpenAddressModal}
+                toggle={toggleAddressModal}
             />
         </>
     )

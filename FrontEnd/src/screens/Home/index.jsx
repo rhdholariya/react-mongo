@@ -4,7 +4,7 @@ import AddNewBrandModal from "../../components/BrandsContents/AddNewBrandModal";
 import BrandsTable from "../../components/BrandsContents/BrandsTable";
 
 
-export const HomePage = () => {
+const HomePage = () => {
     const [isOpen, setOpen] = useState(false);
 
     const toggle = () => {
@@ -29,3 +29,4 @@ export const HomePage = () => {
         </Layout>
     )
 }
+export default HomePage;
