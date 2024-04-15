@@ -4,6 +4,7 @@ import { ConfigProvider } from 'antd';
 import history from "./utils/history";
 import Header from "./components/Header";
 import 'sweetalert2/src/sweetalert2.scss';
+import {Suspense} from "react";
 
 function App() {
   return (
@@ -19,10 +20,12 @@ function App() {
         },
       }}
     >
-      <BrowserRouter history={history}>
-        <Header />
-        <Routes />
-      </BrowserRouter>
+      <Suspense fallback="">
+          <BrowserRouter history={history}>
+              <Header />
+              <Routes />
+          </BrowserRouter>
+      </Suspense>
     </ConfigProvider>
   )
 }

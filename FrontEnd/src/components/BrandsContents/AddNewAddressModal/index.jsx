@@ -1,10 +1,7 @@
 import { Button, Flex, Form, Input, Modal } from "antd";
 import { addressFields } from "../../../fields/addressFields";
-import { useRef } from "react";
 
 const AddNewAddressModal = ({ isOpen, toggle }) => {
-    const formRef = useRef(null);
-
     const closeModal = () => {
         toggle();
     }
@@ -14,7 +11,6 @@ const AddNewAddressModal = ({ isOpen, toggle }) => {
             cancelButtonProps={{ style: { display: 'none' } }}
             okButtonProps={{ style: { display: 'none' } }}
             onCancel={closeModal}
-            ref={formRef}
         >
             <Form
                 name="basic"
@@ -22,8 +18,9 @@ const AddNewAddressModal = ({ isOpen, toggle }) => {
                 autoComplete="off"
                 layout="vertical"
             >
-                {addressFields.map((field) => (
+                {addressFields.map((field,index) => (
                     <Form.Item
+                        key={index}
                         label={field}
                         name={field}
                         style={{marginBottom:20}}
@@ -37,8 +34,8 @@ const AddNewAddressModal = ({ isOpen, toggle }) => {
                     </Form.Item>
                 ))}
                 <Flex gap="small" wrap="wrap" justify="end">
-                    <Button onClick={closeModal}>Cancel</Button>
-                    <Button type="primary" htmlType="submit">Save</Button>
+                    <Button onClick={closeModal} size="large">Cancel</Button>
+                    <Button type="primary" size="large" htmlType="submit">Save</Button>
                 </Flex>
             </Form>
         </Modal>

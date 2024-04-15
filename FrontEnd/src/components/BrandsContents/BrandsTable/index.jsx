@@ -38,7 +38,7 @@ const BrandsTable = (props) => {
             title: 'LOGO',
             dataIndex: 'logo',
             key: 'logo',
-            render: (_, record) => {
+            render: () => {
                 return (
                     <img src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" height="94px"/>
                 )
