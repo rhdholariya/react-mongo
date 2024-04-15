@@ -1,10 +1,18 @@
 import { Button, Card, Layout, Table } from "antd"
+import history from "../../utils/history.js";
 
 const columns = [
     {
         title: 'ID',
         dataIndex: 'name',
         key: 'ID',
+        render: (name,row) => {
+            return (
+                <a onClick={()=>history.push(`/create-category/${row.key}`)}>
+                    {name}
+                </a>
+            );
+        },
     },
     {
         title: 'BRAND NAME',
