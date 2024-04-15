@@ -10,6 +10,11 @@ function App() {
         token: {
           colorPrimary: '#806145',
         },
+        components: {
+          Button: {
+            colorSuccess: "#62bd99",
+          },
+        },
       }}
     >
       <BrowserRouter history={history}>

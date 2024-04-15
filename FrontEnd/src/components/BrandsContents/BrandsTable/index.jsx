@@ -1,5 +1,6 @@
-import { Button, Flex, Input, Space, Table } from "antd";
+import { Button, Flex, Input, Table } from "antd";
 import { SearchOutlined } from '@ant-design/icons';
+import { FileExcelOutlined } from '@ant-design/icons';
 
 const columns = [
     {
@@ -54,8 +55,10 @@ const BrandsTable = () => {
                     style={{width:500}}
                 />
                 <Flex gap="small">
-                    <Button>Cancel</Button>
-                    <Button type="primary" htmlType="submit">Save</Button>
+                    <Button className="export_csv">
+                        EXPORT <FileExcelOutlined />
+                    </Button>
+                    <Button primary>SHOW / HIDE COLUMNS</Button>
                 </Flex>
             </Flex>
             <Table
