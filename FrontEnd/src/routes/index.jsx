@@ -11,9 +11,9 @@ const Routes = () => {
     let element = [
         { path: "/", element: <HomePage /> },
         { path: "/brands", element: <HomePage /> },
-        { path: "/create-category/:id", element: <CreateNewCategoryTable /> },
-        { path: "/create-products/:id", element: <ManageProductsTable /> },
-        { path: "/product-group", element: <ManageProductGroup /> },
+        { path: "/brand-category/:id", element: <CreateNewCategoryTable /> },
+        { path: "/brand-products/:id", element: <ManageProductsTable /> },
+        { path: "/create-new-group", element: <ManageProductGroup /> },
     ];
     return useRoutes(element);
 };

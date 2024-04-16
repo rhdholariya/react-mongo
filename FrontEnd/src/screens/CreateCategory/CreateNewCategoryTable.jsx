@@ -28,7 +28,7 @@ const CreateNewCategoryTable = () => {
             key: 'name',
             render: (name, row) => {
                 return (
-                    <a className="link_underline" onClick={() => history.push(`/create-products/${row.id}`)}>
+                    <a className="link_underline" onClick={() => history.push(`/brand-products/${row.id}`)}>
                         {name}
                     </a>
                 );
@@ -80,7 +80,23 @@ const CreateNewCategoryTable = () => {
             hsn_name: 'Mike',
             hsn_code: '2342352342398',
             created_at: '09/04/2024',
-        }
+        },
+        {
+            id: 2,
+            key: '1',
+            name: 'Mike',
+            hsn_name: 'Mike',
+            hsn_code: '2342352342398',
+            created_at: '09/04/2024',
+        },
+        {
+            id: 3,
+            key: '1',
+            name: 'Mike',
+            hsn_name: 'Mike',
+            hsn_code: '2342352342398',
+            created_at: '09/04/2024',
+        },
     ];
     const filteredDataSource = dataSource.filter(item =>
         Object.values(item).some(val => typeof val === 'string' && val.toLowerCase().includes(searchText.toLowerCase()))

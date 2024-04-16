@@ -27,7 +27,7 @@ const BrandsTable = (props) => {
                 return (
                     <Link
                         className="link_underline"
-                        to={`/create-category/${row.key}`}
+                        to={`/brand-category/${row.key}`}
                     >
                         {name}
                     </Link>

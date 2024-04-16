@@ -73,7 +73,23 @@ const ManageProductsTable = () => {
             hsn_name: 'Mike',
             hsn_code: '2342352342398',
             created_at: '09/04/2024',
-        }
+        },
+        {
+            id: 2,
+            key: '1',
+            name: 'Mike Product',
+            hsn_name: 'Mike',
+            hsn_code: '2342352342398',
+            created_at: '09/04/2024',
+        },
+        {
+            id: 3,
+            key: '1',
+            name: 'Mike Product',
+            hsn_name: 'Mike',
+            hsn_code: '2342352342398',
+            created_at: '09/04/2024',
+        },
     ];
     const filteredDataSource = dataSource.filter(item =>
         Object.values(item).some(val => typeof val === 'string' && val.toLowerCase().includes(searchText.toLowerCase()))
@@ -94,7 +110,7 @@ const ManageProductsTable = () => {
                         <Button
                             type="primary"
                             size="large"
-                            onClick={()=>history.push('/product-group')}
+                            onClick={()=>history.push('/create-new-group')}
                         >
                             Create a new Product Group
                         </Button>
